@@ -1,11 +1,13 @@
+import type { PluginInfo } from 'arrgh-plugin-sdk'
+import { version } from '../package.json'
 import { setContext } from './nhentai'
 import * as n from './nhentai'
 import type { PluginContext } from './nhentai'
 
-export const info = {
+export const info: PluginInfo = {
   id: 'nhentai',
-  version: '1.0.0',
   name: 'nhentai',
+  version,
   default_explicit: true,
   content_types: ['hentai'],
 }

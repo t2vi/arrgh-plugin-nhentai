@@ -6,7 +6,7 @@ const API = `${BASE}/api/v2`
 interface BrowserPage {
   goto(url: string, opts?: { waitUntil?: string; timeout?: number }): Promise<unknown>
   content(): Promise<string>
-  evaluate<T>(fn: ((...args: unknown[]) => T) | string, ...args: unknown[]): Promise<T>
+  evaluate<T, Args extends unknown[] = unknown[]>(fn: ((...args: Args) => T) | string, ...args: Args): Promise<T>
   close(): Promise<void>
 }
 interface BrowserContextLike {
